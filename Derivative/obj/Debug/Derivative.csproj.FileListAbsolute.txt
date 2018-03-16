@@ -1,0 +1,7 @@
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\bin\Debug\Derivative.exe.config
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\bin\Debug\Derivative.exe
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\bin\Debug\Derivative.pdb
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.csprojResolveAssemblyReference.cache
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.csproj.CoreCompileInputs.cache
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.exe
+c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.pdb
