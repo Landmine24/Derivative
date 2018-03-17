@@ -10,10 +10,6 @@ namespace Derivative
     {
         static bool CheckForPlusAndMinus(string term)
         {
-            if (VariableIndex(term) != -1)
-            {
-                return true;
-            }
             int index = 0;
             char[] operators = { '+', '-' };
             foreach (char charachter in term)
@@ -67,38 +63,67 @@ namespace Derivative
             for (int i = 0; i < splitTerms.Count; i++)
             {
                 int variableIndex = VariableIndex(splitTerms[i]);
+                int carrotIndex = CarrotIndex(splitTerms[i]);
                 string coeficientString = "";
-                double coeficientNumber;
+                double coeficientNumber = 0;
                 string exponentString = "";
-                double exponentNumber;
-                string newTerm;
+                double exponentNumber = 0;
+                string newTerm = "";
+                string newExponent = "";
+                string newCoeficient = "";
                 if (variableIndex != -1)
                 {
+                    if (CheckForPlusAndMinus(splitTerms[i]))
+                    {
+                        newTerm = "";
+                        splitTerms[i] = newTerm;
+                        continue;
+                    }
                     for (int j = 0; j < variableIndex; j++)
                     {
                         coeficientString += splitTerms[i][j];
                     }
-                    if (CarrotIndex(splitTerms[i]) != -1)
+                    if (coeficientString.Length == 0)
                     {
-                        for (int j = variableIndex + 2; j < splitTerms[i].Length; j++)
+                        coeficientString = "1";
+                    }
+                    if (carrotIndex != -1)
+                    {
+                        for (int j = carrotIndex + 1; j < splitTerms[i].Length; j++)
                         {
                             exponentString += splitTerms[i][j];
                         }
                         exponentNumber = double.Parse(exponentString);
-                        string newExponent = (exponentNumber - 1).ToString();
+                        newExponent = (exponentNumber - 1).ToString();
                         coeficientNumber = double.Parse(coeficientString);
-                        string newCoeficient = (coeficientNumber * exponentNumber).ToString();
-                        newTerm = newCoeficient + splitTerms[i][variableIndex] + newExponent;
+                        newCoeficient = (coeficientNumber * exponentNumber).ToString();
+                        if (newExponent == "1")
+                        {
+                            newTerm = newCoeficient + splitTerms[i][variableIndex];
+                        }
+                        else
+                        {
+                            newTerm = newCoeficient + splitTerms[i][variableIndex] + splitTerms[i][carrotIndex] + newExponent;
+                        }
+                        
                     }
                     else
                     {
-
+                        newTerm = coeficientString;
                     }
-                    
                     splitTerms[i] = newTerm;
+
                 }
             }
             string derivative = "";
+            //if (splitTerms[splitTerms.Count - 1] == "")
+            //{
+            //    for (int i = 0; i < splitTerms.Count - 1; i++)
+            //    {
+            //        derivative += splitTerms[i];
+            //        derivative += " ";
+            //    }
+            //}
             foreach (string term in splitTerms)
             {
                 derivative += term;

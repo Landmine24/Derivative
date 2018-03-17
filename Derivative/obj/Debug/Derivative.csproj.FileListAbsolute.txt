@@ -5,3 +5,10 @@ c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative
 c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.csproj.CoreCompileInputs.cache
 c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.exe
 c:\users\tolmalan000\documents\visual studio 2017\Projects\Derivative\Derivative\obj\Debug\Derivative.pdb
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\bin\Debug\Derivative.exe.config
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\bin\Debug\Derivative.exe
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\bin\Debug\Derivative.pdb
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\obj\Debug\Derivative.csprojResolveAssemblyReference.cache
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\obj\Debug\Derivative.csproj.CoreCompileInputs.cache
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\obj\Debug\Derivative.exe
+C:\Users\Landon Tolman\source\repos\Derivative\Derivative\obj\Debug\Derivative.pdb
