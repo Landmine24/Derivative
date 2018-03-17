@@ -12,7 +12,7 @@ namespace Derivative
         {
             int index = 0;
             char[] operators = { '+', '-' };
-            foreach (char charachter in term)
+            foreach (char charachter in operators)
             {
                 index = term.IndexOf(charachter);
                 if (index != -1)
@@ -71,14 +71,14 @@ namespace Derivative
                 string newTerm = "";
                 string newExponent = "";
                 string newCoeficient = "";
-                if (variableIndex != -1)
+                if (carrotIndex == -1 && !CheckForPlusAndMinus(splitTerms[i]) && variableIndex == -1)
                 {
-                    if (CheckForPlusAndMinus(splitTerms[i]))
-                    {
-                        newTerm = "";
-                        splitTerms[i] = newTerm;
-                        continue;
-                    }
+                    newTerm = "";
+                    splitTerms[i] = newTerm;
+                    continue;
+                }
+                else if (variableIndex != -1)
+                {
                     for (int j = 0; j < variableIndex; j++)
                     {
                         coeficientString += splitTerms[i][j];
@@ -105,7 +105,7 @@ namespace Derivative
                         {
                             newTerm = newCoeficient + splitTerms[i][variableIndex] + splitTerms[i][carrotIndex] + newExponent;
                         }
-                        
+
                     }
                     else
                     {
@@ -116,18 +116,21 @@ namespace Derivative
                 }
             }
             string derivative = "";
-            //if (splitTerms[splitTerms.Count - 1] == "")
-            //{
-            //    for (int i = 0; i < splitTerms.Count - 1; i++)
-            //    {
-            //        derivative += splitTerms[i];
-            //        derivative += " ";
-            //    }
-            //}
-            foreach (string term in splitTerms)
+            if (splitTerms[splitTerms.Count - 1] == "")
             {
-                derivative += term;
-                derivative += " ";
+                for (int i = 0; i < splitTerms.Count - 2; i++)
+                {
+                    derivative += splitTerms[i];
+                    derivative += " ";
+                }
+            }
+            else
+            {
+                foreach (string term in splitTerms)
+                {
+                    derivative += term;
+                    derivative += " ";
+                }
             }
             return derivative;
 
